@@ -13,7 +13,7 @@ let groupManager = HTGroupMessage.init('your group url')
 groupManager.post('your message type', 'your message content')
 
 // 监听其他进程发来的消息
-groupManager.listen('your message type', { (messageType, messageContent)
+groupManager.listen('your message type', { (messageType, messageContent) in
 
 })
 ```
