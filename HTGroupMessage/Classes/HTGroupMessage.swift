@@ -182,7 +182,7 @@ public class HTGroupMessage {
 	
     public func clear() {
         let delete = "delete from message"
-        sqlite3_exec(sqlite, delete.cString(using: .utf8), nil, nil, nil)
+        sqliteExec(delete)
 		self.lastInsertList.removeAll()
 	}
 	
