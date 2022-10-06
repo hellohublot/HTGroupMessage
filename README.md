@@ -1,5 +1,7 @@
-- 支持 Group 进程间通信, 比如主 app 和 Today Extension 和 VPN Network Extension 三个进程之间的通信
-- 单独使用 CFNotification 不能携带消息内容，所以使用 SQLite3 存储消息内容
+## Features
+
+- Support group out-process communication, such as the communication between the main app and the three processes of Today Extension and VPN Network Extension
+- CFNotification alone cannot take the message content, so use SQLite3 to store the message content
 
 ## Usage
 
@@ -9,10 +11,10 @@ pod 'HTGroupMessage', :git => 'https://github.com/hellohublot/HTGroupMessage.git
 ```swift
 let groupManager = HTGroupMessage.init('your group url')
 
-// 发送消息到其他进程
+// send message to other process
 groupManager.post('your message type', 'your message content')
 
-// 监听其他进程发来的消息
+// receive message from other process
 groupManager.listen('your message type', { (messageType, messageContent) in
 
 })
